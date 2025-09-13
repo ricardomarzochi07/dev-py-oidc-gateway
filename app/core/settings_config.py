@@ -38,6 +38,7 @@ def load_config():
     # Retornar el config completo
     return AppConfig(oidc_gateway_env=oidc_env)
 
+
 def get_keys(app_env: str):
     match app_env:
         case IAMConstants.LOCAL_ENV:

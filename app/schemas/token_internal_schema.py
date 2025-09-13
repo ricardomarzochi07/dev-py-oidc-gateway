@@ -1,7 +1,7 @@
 from pydantic import BaseModel
 
 
-class TokenResponseSchema(BaseModel):
-    access_token: str
+class TokenInternalSchema(BaseModel):
+    jwt_nonce: str
     token_type: str
     expires_in: int

@@ -18,10 +18,7 @@ class Wso2isClient:
 
     def get_token_in_client_credential(self) -> AccessTokenWso2:
         self.logger.info("Execute Request - client_credential_token")
-        print(" |||||||||||||||||||||| get_token_in_client_credential  ==== wso2_token ===== ")
-
         now = int(time.time())
-
         # Check cache for Token Valid
         if self.cache.get("token") and self.cache.get("exp") > now + 60:
             return AccessTokenWso2(
