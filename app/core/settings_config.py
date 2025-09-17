@@ -6,7 +6,7 @@ from pathlib import Path
 import re
 from cryptography.hazmat.primitives import serialization
 
-from app.core.oidc_constants import IAMConstants
+from app.core.oidc_constants import Constants
 from app.dto.keys_dto import KeysDTO
 
 
@@ -41,14 +41,14 @@ def load_config():
 
 def get_keys(app_env: str):
     match app_env:
-        case IAMConstants.LOCAL_ENV:
+        case Constants.LOCAL_ENV:
             return KeysDTO(
                 private_key=open_file_private_dev(app_env),
                 public_key=open_file_public_dev(app_env))
-        case IAMConstants.PRE_ENV:
+        case Constants.PRE_ENV:
             print("Env PRE")
             return None
-        case IAMConstants.PROD_ENV:
+        case Constants.PROD_ENV:
             print("Env PRO")
             return None
         case _:

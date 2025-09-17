@@ -1,5 +1,5 @@
 from fastapi import APIRouter, Body, Depends, Response, Request, HTTPException
-from fastapi.security import HTTPAuthorizationCredentials, HTTPBearer
+from fastapi.security import  HTTPBearer
 from app.core.environment_config import AppConfig
 from app.core.settings_config import load_config
 from buddybet_logmon_common.logger import get_logger
@@ -17,15 +17,15 @@ def get_oidc_service(config: AppConfig = Depends(load_config)) -> OidcServiceImp
     return OidcServiceImpl(config)
 
 
-@router.post("/oidc/internal/token",
-             response_model_exclude_none=True,
-             summary="Return Token JWT > IdP",
-             response_model=TokenInternalSchema,
-             responses={
-                 200: {"description": "Success"},
-                 401: {"description": "Unauthorized"},
-                 502: {"description": "Unavailable"},
-             })
+@router.get("/oidc/token/internal",
+            response_model_exclude_none=True,
+            summary="Return Token JWT > IdP",
+            response_model=TokenInternalSchema,
+            responses={
+                200: {"description": "Success"},
+                401: {"description": "Unauthorized"},
+                502: {"description": "Unavailable"},
+            })
 async def get_token_internal(oidcService: OidcServiceImpl = Depends(get_oidc_service)):
     logger.info("Execute Request - issue_internal_token")
     try:
@@ -36,7 +36,7 @@ async def get_token_internal(oidcService: OidcServiceImpl = Depends(get_oidc_ser
         raise HTTPException(status_code=500, detail="Error internal")
 
 
-@router.post("/oidc/idp/token",
+@router.post("/oidc/token/idp",
              response_model_exclude_none=True,
              summary="Return Token JWT > IdP",
              response_model=TokenIdpSchema,

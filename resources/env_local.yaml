@@ -1,6 +1,8 @@
 oidc_gateway_env:
-  wso2_token_url: https://localhost:9443/oauth2/token
+  idp_service_url: https://localhost:9443/
+  signup_core_service_url: http://localhost:8003
   oidc_client_id: WYYfij1MQgCL2KRMyEViboOfjEsa
   oidc_client_secret: Js6AgQZAfVDvTKlEer739WyQRpsv40941cyfqPvdaYga
   time_exp_token: 120
   kid_name: oidc-key-1
+  idp_audience_signup_register: signup-service

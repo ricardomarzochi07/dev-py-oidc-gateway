@@ -47,6 +47,21 @@ files = [
 fastapi = ">=0.116.1,<0.117.0"
 
 [[package]]
+name = "buddybet-transactionmanager"
+version = "0.1.1"
+description = "Lib for manager Transaction HTTPs"
+optional = false
+python-versions = ">=3.12"
+groups = ["main"]
+files = [
+    {file = "buddybet_transactionmanager-0.1.1-py3-none-any.whl", hash = "sha256:c19f51c3bacaa3466bcc4a8b54ee6762ac0001e8a8fdf82fc2a3b9fccf486e55"},
+    {file = "buddybet_transactionmanager-0.1.1.tar.gz", hash = "sha256:c69f4e266b2f3db75b3692b3e410563fdaf7a1bd75e0263cbace5ac9b5fe417d"},
+]
+
+[package.dependencies]
+buddybet-logmon-common = ">=0.1.0,<0.2.0"
+
+[[package]]
 name = "cffi"
 version = "2.0.0"
 description = "Foreign Function Interface for Python calling C code."
@@ -547,4 +562,4 @@ typing-extensions = ">=4.12.0"
 [metadata]
 lock-version = "2.1"
 python-versions = ">=3.12"
-content-hash = "9184468c1932e7d0b9c9a1600fd8dcadf95db19a1d6c3bd7ad7eb68ee0773a20"
+content-hash = "c3b7a2883b8ca9cd0d2677e6b5c91265c8254ddd7efb64bfd85b9acddb4255fa"
