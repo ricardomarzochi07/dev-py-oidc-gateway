@@ -48,14 +48,14 @@ fastapi = ">=0.116.1,<0.117.0"
 
 [[package]]
 name = "buddybet-transactionmanager"
-version = "0.1.1"
+version = "0.2.1"
 description = "Lib for manager Transaction HTTPs"
 optional = false
 python-versions = ">=3.12"
 groups = ["main"]
 files = [
-    {file = "buddybet_transactionmanager-0.1.1-py3-none-any.whl", hash = "sha256:c19f51c3bacaa3466bcc4a8b54ee6762ac0001e8a8fdf82fc2a3b9fccf486e55"},
-    {file = "buddybet_transactionmanager-0.1.1.tar.gz", hash = "sha256:c69f4e266b2f3db75b3692b3e410563fdaf7a1bd75e0263cbace5ac9b5fe417d"},
+    {file = "buddybet_transactionmanager-0.2.1-py3-none-any.whl", hash = "sha256:e89881c861ba9262a08400d690c63f1f167d3a0faebee1315f67ddaf5c8c1b54"},
+    {file = "buddybet_transactionmanager-0.2.1.tar.gz", hash = "sha256:c5ba52f18bedc7a70c6fe1551052d13be7764ebff6fbab51781450eb65b0f507"},
 ]
 
 [package.dependencies]
@@ -562,4 +562,4 @@ typing-extensions = ">=4.12.0"
 [metadata]
 lock-version = "2.1"
 python-versions = ">=3.12"
-content-hash = "c3b7a2883b8ca9cd0d2677e6b5c91265c8254ddd7efb64bfd85b9acddb4255fa"
+content-hash = "b2d48bd2a1fd692a5a5b6b699d275c29be284c17736a03039c04b92dde7f9cc6"
