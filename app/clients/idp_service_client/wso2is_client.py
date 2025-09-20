@@ -14,7 +14,7 @@ class Wso2isClient:
     cache = {"token": None, "exp": 0}
 
 
-    def get_access_token_for_signup(self, base_url: str, client_id: str, client_secret: str) -> TokenIdpSchema:
+    async def get_access_token_for_signup(self, base_url: str, client_id: str, client_secret: str) -> TokenIdpSchema:
         self.logger.info("Execute Request - get_access_token_for_signup")
         now = int(time.time())
         expected_scope = Constants.SCOPE_SIGNUP_IDP
@@ -39,6 +39,7 @@ class Wso2isClient:
                 verify=False
             )
             response.raise_for_status()
+            print("TOKEN >>>>>>>>>>>>>>>>>>>>>>>>", response.json())
         except requests.exceptions.RequestException as e:
             self.logger.error("WSO2 request failed", exc_info=True)
             raise HTTPException(status_code=502, detail="WSO2 token endpoint not reachable")

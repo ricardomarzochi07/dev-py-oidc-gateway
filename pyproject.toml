@@ -14,6 +14,7 @@ dependencies = [
     "python-jose (>=3.5.0,<4.0.0)",
     "cryptography (>=45.0.7,<46.0.0)",
     "buddybet-transactionmanager (>=0.2.1,<0.3.0)",
+    "buddybet-idpsecure (==1.0.2)",
 ]
 
 

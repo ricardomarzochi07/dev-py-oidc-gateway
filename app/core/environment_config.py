@@ -12,6 +12,7 @@ class AppConfigEnvironment(BaseModel):
     private_key: Optional[bytes] = None
     signup_core_service_url: str
     idp_audience_signup_register: str
+    idp_scope_signup: str
 
 
 class AppConfig(BaseModel):

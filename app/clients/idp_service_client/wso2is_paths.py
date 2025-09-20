@@ -1,2 +1,2 @@
 class IdpPaths:
-    AUTH_TOKEN = "oauth2/token"
+    AUTH_TOKEN = "/oauth2/token"

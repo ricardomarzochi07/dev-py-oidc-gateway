@@ -1,8 +1,9 @@
 oidc_gateway_env:
-  idp_service_url: https://localhost:9443/
-  signup_core_service_url: http://localhost:8003
+  idp_service_url: https://localhost:9443
+  signup_core_service_url: http://localhost:8003/signup_core
   oidc_client_id: WYYfij1MQgCL2KRMyEViboOfjEsa
   oidc_client_secret: Js6AgQZAfVDvTKlEer739WyQRpsv40941cyfqPvdaYga
   time_exp_token: 120
   kid_name: oidc-key-1
   idp_audience_signup_register: signup-service
+  idp_scope_signup: internal_user_mgt_create
