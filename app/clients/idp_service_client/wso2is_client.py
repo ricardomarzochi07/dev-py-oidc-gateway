@@ -1,9 +1,10 @@
 from buddybet_logmon_common.logger import get_logger
 
 from app.clients.idp_service_client.wso2is_paths import IdpPaths
+from app.core.exceptions import ConnectionFailIdp
 from app.core.oidc_constants import Constants
 import requests, time
-from fastapi import HTTPException
+from requests.exceptions import RequestException, HTTPError, ConnectionError, Timeout
 from app.schemas.token_idp_schema import TokenIdpSchema
 
 
@@ -39,19 +40,26 @@ class Wso2isClient:
                 verify=False
             )
             response.raise_for_status()
-            print("TOKEN >>>>>>>>>>>>>>>>>>>>>>>>", response.json())
-        except requests.exceptions.RequestException as e:
+            # Save new Token in Cache
+            data = response.json()
+            self.cache["access_token"] = data["access_token"]
+            self.cache["type"] = Constants.TOKEN_TYPE
+            self.cache["expires_in"] = now + data.get("expires_in", 1800)  # fallback 30 min
+
+            return TokenIdpSchema(
+                access_token=self.cache["access_token"],
+                token_type=self.cache["type"],
+                expires_in=self.cache["expires_in"]
+            )
+
+        except (HTTPError, ConnectionError, Timeout) as e:
+            self.logger.error(f"WSO2 request failed: {str(e)}", exc_info=True)
+            raise ConnectionFailIdp()
+        except RequestException as e:
+            self.logger.error(f"WSO2 unknown request error: {str(e)}", exc_info=True)
+            raise ConnectionFailIdp()
+        except ConnectionFailIdp as e:
             self.logger.error("WSO2 request failed", exc_info=True)
-            raise HTTPException(status_code=502, detail="WSO2 token endpoint not reachable")
+            raise ConnectionFailIdp()
 
-        # Save new Token in Cache
-        data = response.json()
-        self.cache["access_token"] = data["access_token"]
-        self.cache["type"] = Constants.TOKEN_TYPE
-        self.cache["expires_in"] = now + data.get("expires_in", 1800) # fallback 30 min
 
-        return TokenIdpSchema(
-            access_token=self.cache["access_token"],
-            token_type=self.cache["type"],
-            expires_in=self.cache["expires_in"]
-        )

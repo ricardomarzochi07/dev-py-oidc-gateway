@@ -16,11 +16,11 @@ class OidcTokenService(ABC):
         pass
 
     @abstractmethod
-    def validate_token_internal(self, internal_token: str):
+    def _validate_token_internal(self, internal_token: str):
         pass
 
     @abstractmethod
-    def validate_token_idp_for_signup(self, idp_token: str):
+    def _validate_token_idp_for_signup(self, idp_token: str):
         pass
 
     @abstractmethod

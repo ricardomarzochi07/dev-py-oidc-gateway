@@ -5,9 +5,12 @@ from app.core.environment_config import AppConfig, AppConfigEnvironment
 from pathlib import Path
 import re
 from cryptography.hazmat.primitives import serialization
-
+from buddybet_logmon_common.logger import get_logger
 from app.core.oidc_constants import Constants
 from app.dto.keys_dto import KeysDTO
+from app.core.exceptions import JwtSigningError
+
+logger = get_logger()
 
 
 def expand_env_variables(content: str) -> str:
@@ -78,7 +81,8 @@ def open_file_private_dev(app_env: str):
     except FileNotFoundError:
         raise FileNotFoundError(f"No se encontró el archivo de clave privada: {key_path}")
     except ValueError as e:
-        raise ValueError(f"Error cargando la clave privada: {e}")
+        logger.error(f"Error load private key: {str(e)}", exc_info=True)
+        raise JwtSigningError()
 
 
 def open_file_public_dev(app_env: str):
@@ -94,4 +98,5 @@ def open_file_public_dev(app_env: str):
     except FileNotFoundError:
         raise FileNotFoundError(f"No se encontró el archivo de clave public: {key_path}")
     except ValueError as e:
-        raise ValueError(f"Error cargando la clave public: {e}")
+        logger.error(f"Error load public key: {str(e)}", exc_info=True)
+        raise JwtSigningError()

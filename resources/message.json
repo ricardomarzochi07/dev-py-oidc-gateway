@@ -1,0 +1,90 @@
+{
+  "invalid_signature": {
+    "en": "Invalid token signature.",
+    "es": "Firma del token no válida.",
+    "fr": "Signature du jeton invalide."
+  },
+  "expired_token": {
+    "en": "Token has expired.",
+    "es": "El token ha expirado.",
+    "fr": "Le jeton a expiré."
+  },
+  "invalid_audience": {
+    "en": "Invalid audience in token.",
+    "es": "Audiencia no válida en el token.",
+    "fr": "Audience invalide dans le jeton."
+  },
+  "invalid_issuer": {
+    "en": "Invalid token issuer.",
+    "es": "Emisor del token no válido.",
+    "fr": "Émetteur du jeton invalide."
+  },
+  "invalid_not_before": {
+    "en": "Token is not valid yet (nbf claim).",
+    "es": "El token aún no es válido (atributo nbf).",
+    "fr": "Le jeton n'est pas encore valide (champ nbf)."
+  },
+  "invalid_claims": {
+    "en": "Token contains invalid claims.",
+    "es": "El token contiene atributos no válidos.",
+    "fr": "Le jeton contient des revendications invalides."
+  },
+  "invalid_token": {
+    "en": "Token is invalid.",
+    "es": "El token no es válido.",
+    "fr": "Le jeton est invalide."
+  },
+  "connection_fail_idp": {
+    "en": "WSO2 token endpoint not reachable.",
+    "es": "El token IDP no está accesible",
+    "fr": "Le jeton IDP n'est pas accessible"
+  },
+  "user_registration_error": {
+    "en": "Failed to register user.",
+    "es": "No se pudo registrar el usuario",
+    "fr": "Échec de l'enregistrement de l'utilisateur"
+  },
+  "jwt_signing_error": {
+    "en": "Error signing JWT",
+    "es": "Error al firmar JWT",
+    "fr": "Erreur lors de la signature de JWT"
+  },
+  "validator_not_initialized": {
+    "en": "Validator not initialized. Call init_validator()",
+    "es": "Validador no inicializado. Llamar a init_validator()",
+    "fr": "Validateur non initialisé. Appelez init_validator()"
+  },
+  "external_service_error": {
+    "en": "The system was unable to communicate with an external service. Please try again later or contact support if the problem persists",
+    "es": "El sistema no pudo comunicarse con un servicio externo. Inténtalo de nuevo más tarde o contacta con soporte si el problema continúa",
+    "fr": "Le système n’a pas pu communiquer avec un service externe. Veuillez réessayer plus tard ou contacter le support si le problème persiste"
+  },
+  "generate_internal_token": {
+    "en": "Token successfully.",
+    "es": "Token generado con suceso",
+    "fr": "Token generado con suceso ",
+    "pt": "Token generado com sucesso"
+  },
+  "user_registration": {
+    "en": "User registered successfully",
+    "es": "Usuario registrado con éxito.",
+    "fr": "Utilisateur enregistré avec succès.",
+    "pt": "Usuário registrado com sucesso."
+  },
+ "user_already_exists": {
+    "en": "The user is already registered in the system.",
+    "es": "El usuario ya está registrado en el sistema.",
+    "fr": "L'utilisateur est déjà enregistré dans le système.",
+    "pt": "O usuário já se encontra cadastrado no sistema."
+ },
+ "invalid_user_data": {
+    "en": "The user data provided is invalid.",
+    "es": "Los datos proporcionados del usuario no son válidos.",
+    "fr": "Les données fournies pour l'utilisateur ne sont pas valides."
+  },
+  "resource_not_found": {
+    "en": "The requested resource could not be found.",
+    "es": "No se pudo encontrar el recurso solicitado",
+    "fr": "La ressource demandée est introuvable.."
+  }
+}
