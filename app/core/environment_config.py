@@ -3,6 +3,8 @@ from typing import Optional
 
 
 class AppConfigEnvironment(BaseModel):
+    redis_url: str
+    cache_default_ttl: int
     idp_service_url: str
     oidc_client_id: str
     oidc_client_secret: str

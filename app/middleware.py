@@ -38,7 +38,7 @@ register_exception_handlers(app)
 # Configuración CORS si tu frontend está en otro dominio
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["http://localhost:8001"],  # Ajustar según deployment
+    allow_origins=["http://localhost:8000","http://localhost:3000","http://localhost:3001"],  # Ajustar según deployment
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],

@@ -16,6 +16,7 @@ dependencies = [
     "buddybet-transactionmanager (==0.6.1)",
     "buddybet-i18n (==0.6.0)",
     "buddybet-idpsecure (==1.0.6)",
+    "redis (>=5.0,<6.0)",
 ]
 
 
